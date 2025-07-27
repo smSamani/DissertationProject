@@ -1,140 +1,38 @@
-!"#"$%&'&(#)*+$,$%(*-&
-!
-"#! $#%#&'#(! ')#! *+#,
--
-.&&#$$! /'.'$0*12! (.'.$#'! .$! *34! +451.46! (.'.! $*34&#7! 8*&3$5,9! $+#&585&.%%6!
-*,!0.6#4!:#;#4<3$#,=$!83%%!$#.$*,!5,!')#!03,(#$%59.>!?)5$!(.'.$#'!+4*;5(#$!)59)%6!(#'.5%#(!#;#,'!
-%*9$!@#;#,'>A$*,B7!%5,#3+!5,8*41.'5*,!@%5,#3+>A$*,B7!.,(!CDE
--
-(#
-94##!84##F#
--
-84.1#!(.'.!@CDE>A$*,B!
-8*4!#.&)!1.'&)>!?*!#,$34#!83'34#!8%#G525%5'6!.,(!#.$6!.&&#$$7!H#!*49.,5F#(!')#!(.'.!$*!').'!#.&)!
-1.'&)!).$!5'$!*H,!8*%(#4!&*,'.5,5,9!.%%!')4##!85%#$>
-!
-%#./(#/.)+0$1##"(2$3"4&4
-!
-?*!+4#+.4#!')#!(.'.!8*4!8#.'34#!#,95,##45,97!H#!854$'!,##(#(!'*!(#85,#!.,(!(#'#&'!5,(5;5(3.%!
-.''.&<5,9!&.$#$>!I*4!')5$7!H#!5(#,'585#(!#.&)!0.6#4!:#;#4<3$#,!$)*'!@H)#4#!.!;.%5(!GJ!;.%3#!H.$!
-+4#$#,'B!.$!')#!#,(+*5,'!*8!.,!.''.&<>!"#!')#,!2.&<'4.&<#(!84*1!#.&
-)!$)*'!#;#,'!'*!')#!+4#;5*3$!
-&).,9#!*8!+*$$#$$5*,7!H)5&)!H.$!1.4<#(!.$!')#!$'.4'!*8!')#!.''.&<>!K,!$5'3.'5*,$!H)#4#!13%'5+%#!
-$)*'$!*&&344#(!H5')5,!.!$5,9%#!+*$$#$$5*,7!')#$#!H#4#!1#49#(!5,'*!*,#!&.$#7!.,(!')#!'*'.%!GJ!H.$!
-$311#(>!?)5$!+4*&#$$!9#,#4.'#(!.!&
-%#.,!(.'.$#'!*8!.''.&<!&.$#$7!#.&)!H5')!5'$!*H,!3,5L3#!$'.4'!.,(!
-#,(!+*5,'$7!GJ!;.%3#7!.,(!*')#4!1#'.(.'.>
-!
-56"4&$78$9"4)($%#"#)4#)("'$:&"#/.&4
-!
-K,!')#!854$'!+).$#!*8!8#.'34#!#,95,##45,97!H#!#G'4.&'#(!8*34!&*4#!$'.'5$'5&.%!8#.'34#$!84*1!#.&)!
-.''.&<5,9!&.$#M
-!
-¥
-!
-!/."#)*+8
-!
-?*'.%!.&'5;#!+%.6!'51#!(345,9!')#!.''.&<!@26!$3115,9!#;#,'!(34.'5*,$!H5')5,!
-#.&)!&.$#B>
-!
-¥
-!
-!)4#"+(&$3*;&.&<8
-!
-N*125,#(!')#!%#,9')!*8!.%%!+.$$#$!.,(!')#!(5$'.,&#!*8!&.445#$!'*!
-#$'51.'#!'*'.%!2.%%!1*;#1#,'>
-!
-¥
-!
-=/>?&.$*@$5"44&48
-!
-N*3,'#(!')#!,312#4!*8!+.$$!#;#,'$!5,!#.&)!$#L3#,&#>
-!
-¥
-!
-=/>?&.$*@$5'"A&.4$B+;*';&<8
-!
-N*3,'#(!3,5L3#!0.6#4!:#;#4<3$#,!+%.6#4$!+.4'5&5+.'5,9!5,!
-')#!.''.&<7!H5')!%*95&!'*!).,(%#!$32$'5'3'5*,$!&*44#&'%6!.,(!.;*5(!5,8%.'#(!&*3,'$>
-!
-?)#$#!8#.'34#$!+4*;5(#!.!8*3,(.'5*,.%!$311.46!*8!#.&)!.''.&<!.,(!8*41!')#!2.$5$!8*4!834')#4!
-'.&'5&.%!.,.%6$5$>
-!
-56"4&$C8$%-"#)"'$"+<$9"''$5.*0.&44)*+$:&"#/.&4
-!
-K,! ')#! $#&*,(! +).$#7! H#! 8*&3$#(! *,! ')#! $+.'5.%! (6,.15&$! *8! #.&)! .''.&<! 26! .,.%6F5,9! )*H! ')#!2.%%!
-1*;#(!.&4*$$!(588#4#,'!.4#.$!*8!')#!+5'&)>!?)#!85#%(!H.$!(5;5(#(!5,'*!.!DGO!945(!@PO!F*,#$B7!.,(!H#!
-&*3,'#(!')#!,312#4!*8!'51#$!')#!2.%%!#,'#4#(!#.&)!F*,#!(345
-,9!.,!.''.&<>!"#!.%$*!4#&*4(#(!')#!
-$'.4'5,9! .,(! #,(5,9! F*,#$! 8*4! #.&)!&.$#>! Q((5'5*,.%!8#.'34#$! 5,&%3(#(! ')#!,312#4! *8! F*,#!
-'4.,$5'5*,$!@)*H!*8'#,!')#!2.%%!&).,9#(!.4#.$B7!&*3,'$!*8!8*4H.4(!.,(!2.&<H.4(!1*;#1#,'$!2.$#(!
-*,! G
--
-&**4(5,.'#! &).,9#$7! .,(! ')#!
-+&#$
--.*0.&44$ ."#)*
-R
-.! 1#'45&! ').'! L3.,'585#$! )*H! #885&5#,'%6! ')#!
-2.%%!1*;#(!8*4H.4(!&*1+.4#(!'*!2.&<H.4(!(345,9!')#!.''.&<>
-!
-!" # $ % & ' ( & " ) ) $ *+ # , ' $ -
-.' # + / $ 0 ' & 1+ & 2 $ 3, ) # + 4 5 "
-$
-6
-$
-7.'#+/$0'&1+&2$3,)#+45"$8$.'#+/$9+5:1+&2$3,)#+45";
-$
-56"4&$D8$:.&&E&$:.">&$"+<$%6*#$3*+#&F#$:&"#/.&4
-!
-K,!')#!')54(!+).$#7!H#!3$#(!/'.'$0*12=$!
-84##F#
--
-84.1#!(.'.!'*!#G'4.&'!$+.'5.%!&*,'#G'!8#.'34#$!.'!
-')#!1*1#,'!*8!#.&)!$)*'>!?)#$#!5,&%3(#M
-!
-¥
-!
-=/>?&.$*@$G--*+&+#4$)+$:.*+#8
-!
-N*3,'$!')#!(#8#,(#4$!(54#&'%6!5,!84*,'!*8!')#!$)**'#4
-R
-$+#&585&.%%67!*++*,#,'$!H)*$#!G
--
-&**4(5,.'#!5$!94#.'#4!').,!')#!$)**'#4=$!@&%*$#4!'*!9*.%B!
-.,(!H)*$#!6
--
-&**4(5,.'#!5$!H5')5,!STEU!*8!')#!$)**'#4=$!6!@4*39)%6!5,!%5,#!)*45F*,'.%%6B>
-!
-¥
-!
-!)4#"+(&$#*$H*"'$3&+#&.8
-!
-?)#!$'4.59)'
--
-%5,#!@V3&%5(#.,B!(5$'.,&#!84*1!')#!$)**'#4!'*!')#!
-&#,'#4!*8!')#!9*.%>
-!
-¥
-!
-%6*#$1+0'&8
-!
-?)#!$5F#!*8!')#!*+#,!.,9%#!'*!')#!9*.%7!&.%&3%.'#(!3$5,9!')#!$)**'#4=$!
-+*$5'5*,!.,(!')#!9*.%+*$'$>
-!
-¥
-!
-I"#(6$5&.)*<8
-!
-")#')#4!')#!$)*'!*&&344#(!5,!')#!854$'!*4!$#&*,(!).%8>
-!
-¥
-!
-1?4*'/#&$I)+/#&8
-!
-?)#!.&'3.%!15,3'#!*8!')#!1.'&)!5,!H)5&)!')#!$)*'!).++#,#(!@#>9>7!WO')!
-15,3'#B>
-!
-?)#$#!8#.'34#$!)#%+!L3.,'586!')#!(5885&3%'6!.,(!L3.%5'6!*8!')#!$)**'5,9!*++*4'3,5'67!+4*;5(5,9!
-51+*4'.,'!&*,'#G'!8*4!GJ!+4#(5&'5*,>
-!
-!
+# Project Progress Summary – Feature Engineering
+
+## Data Selection & Scope
+
+We selected the open-access StatsBomb dataset as our primary data source, focusing specifically on Bayer Leverkusen’s full season in the Bundesliga. This dataset provides highly detailed event logs (event.json), lineup information (lineup.json), and 360-degree freeze-frame data (360.json) for each match. To ensure future flexibility and easy access, we organized the data so that each match has its own folder containing all three files.
+
+## Structuring Attack Cases
+
+To prepare the data for feature engineering, we first needed to define and detect individual attacking cases. For this, we identified each Bayer Leverkusen shot (where a valid xG value was present) as the endpoint of an attack. We then backtracked from each shot event to the previous change of possession, which was marked as the start of the attack. In situations where multiple shots occurred within a single possession, these were merged into one case, and the total xG was summed. This process generated a clean dataset of attack cases, each with its own unique start and end points, xG value, and other metadata.
+
+## Phase 1: Basic Statistical Features
+
+In the first phase of feature engineering, we extracted four core statistical features from each attacking case:
+
+- **Duration:** Total active play time during the attack (by summing event durations within each case).
+- **Distance Covered:** Combined the length of all passes and the distance of carries to estimate total ball movement.
+- **Number of Passes:** Counted the number of pass events in each sequence.
+- **Number of Players Involved:** Counted unique Bayer Leverkusen players participating in the attack, with logic to handle substitutions correctly and avoid inflated counts.
+
+These features provide a foundational summary of each attack and form the basis for further tactical analysis.
+
+## Phase 2: Spatial and Ball Progression Features
+
+In the second phase, we focused on the spatial dynamics of each attack by analyzing how the ball moved across different areas of the pitch. The field was divided into a 6x4 grid (24 zones), and we counted the number of times the ball entered each zone during an attack. We also recorded the starting and ending zones for each case. Additional features included the number of zone transitions (how often the ball changed areas), counts of forward and backward movements based on x-coordinate changes, and the net progress ratio—a metric that quantifies how efficiently the ball moved forward compared to backward during the attack.
+
+**Net Progress Ratio = Total Forward Distance ÷ (Total Forward Distance + Total Backward Distance)**
+
+## Phase 3: Freeze Frame and Shot Context Features
+
+In the third phase, we used StatsBomb’s freeze-frame data to extract spatial context features at the moment of each shot. These include:
+
+- **Number of Opponents in Front:** Counts the defenders directly in front of the shooter—specifically, opponents whose x-coordinate is greater than the shooter’s (closer to goal) and whose y-coordinate is within ±10% of the shooter’s y (roughly in line horizontally).
+- **Distance to Goal Center:** The straight-line (Euclidean) distance from the shooter to the center of the goal.
+- **Shot Angle:** The size of the open angle to the goal, calculated using the shooter’s position and the goalposts.
+- **Match Period:** Whether the shot occurred in the first or second half.
+- **Absolute Minute:** The actual minute of the match in which the shot happened (e.g., 54th minute).
+
+These features help quantify the difficulty and quality of the shooting opportunity, providing important context for xG prediction.
