@@ -1,109 +1,140 @@
-# Bayer Leverkusen Attack Feature Engineering (StatsBomb Data)
-
-## Overview
-
-This project leverages the open-access **StatsBomb football analytics dataset** to engineer advanced features from Bayer Leverkusen’s full Bundesliga season. Our objective: to create a rich dataset of attacking sequences for use in tactical modeling and expected goals (xG) prediction.
-
-We combine granular event logs, lineup data, and freeze-frame spatial context to extract features that go beyond basic stats—enabling deeper, model-driven football analysis.
-
----
-
-## Data Structure
-
-- **Source:** [StatsBomb Open Data](https://statsbomb.com/)
-- **Scope:** All Bundesliga matches for Bayer Leverkusen, one season
-- **Organization:**  
-  ```
-  /MatchFolder/
-    ├── event.json
-    ├── lineup.json
-    └── 360.json
-  ```
-
----
-
-## Methodology
-
-### 1. Structuring Attack Cases
-
-- **Attack Definition:**  
-  Each attack ends with a Bayer Leverkusen shot (with valid xG), and starts at the last possession change before the shot.
-- **Special Handling:**  
-  Multiple shots in one possession are merged; their xG values are summed.
-- **Output:**  
-  Clean attack cases with unique start/end, summed xG, and all metadata.
-
----
-
-### 2. Feature Engineering Phases
-
-#### **Phase 1: Basic Statistical Features**
-- **Duration:** Total play time in the attack.
-- **Distance Covered:** Sum of pass lengths and carries.
-- **Number of Passes:** Count of pass events per attack.
-- **Players Involved:** Unique Leverkusen players (with correct handling for substitutions).
-
-#### **Phase 2: Spatial & Ball Progression Features**
-- **Pitch Grid:** Field divided into a 6x4 grid (24 zones).
-- **Zone Features:**  
-  - Entry counts per zone  
-  - Start/end zone IDs  
-  - Number of zone transitions  
-  - Forward/backward movement counts  
-  - **Net Progress Ratio:**  
-    ```
-    Net Progress Ratio = Total Forward Distance /
-                         (Total Forward Distance + Total Backward Distance)
-    ```
-    Quantifies forward efficiency during each attack.
-
-#### **Phase 3: Freeze Frame & Shot Context Features**
-- **Number of Opponents in Front:**  
-  Defenders directly in front, defined as:
-  - Opponent (not teammate)
-  - X > shooter’s X (closer to goal)
-  - Y within ±10% of shooter’s Y (horizontally aligned)
-- **Distance to Goal Center:** Euclidean distance from shooter to goal center.
-- **Shot Angle:** Open angle to the goal, calculated from shooter position and goalposts.
-- **Match Period:** First or second half.
-- **Absolute Minute:** Actual minute of the match at shot.
-
----
-
-## Outputs
-
-- **Final Dataset:**  
-  One row per attack, with all engineered features and contextual metadata.
-- **Applications:**  
-  - xG modeling
-  - Clustering of attack types
-  - Tactical sequence mining
-
----
-
-## Innovation & Value
-
-- **Granular context:** Integrates raw event data, player context, and spatial snapshots at the moment of each shot.
-- **Flexible structure:** Data is organized for scalable analysis across matches, teams, and competitions.
-- **Model-ready:** Engineered features enable sophisticated ML applications, not just summary stats.
-
----
-
-## Usage
-
-1. **Place StatsBomb data** in the structured folders as shown.
-2. **Run the feature extraction pipeline** to generate the final CSV.
-3. **Plug the dataset** into your favorite ML or analytics workflow.
-
----
-
-## Contact
-
-For questions, collaboration, or consulting:  
-**Soroush Mohammadi Samani**  
-_MSc Business Analytics, University of Kent_  
-[LinkedIn](#) (add your link)
-
----
-
-> **“If you can’t measure it, you can’t improve it. If you can measure it deeply, you can change the game.”**
+!"#"$%&'&(#)*+$,$%(*-&
+!
+"#! $#%#&'#(! ')#! *+#,
+-
+.&&#$$! /'.'$0*12! (.'.$#'! .$! *34! +451.46! (.'.! $*34&#7! 8*&3$5,9! $+#&585&.%%6!
+*,!0.6#4!:#;#4<3$#,=$!83%%!$#.$*,!5,!')#!03,(#$%59.>!?)5$!(.'.$#'!+4*;5(#$!)59)%6!(#'.5%#(!#;#,'!
+%*9$!@#;#,'>A$*,B7!%5,#3+!5,8*41.'5*,!@%5,#3+>A$*,B7!.,(!CDE
+-
+(#
+94##!84##F#
+-
+84.1#!(.'.!@CDE>A$*,B!
+8*4!#.&)!1.'&)>!?*!#,$34#!83'34#!8%#G525%5'6!.,(!#.$6!.&&#$$7!H#!*49.,5F#(!')#!(.'.!$*!').'!#.&)!
+1.'&)!).$!5'$!*H,!8*%(#4!&*,'.5,5,9!.%%!')4##!85%#$>
+!
+%#./(#/.)+0$1##"(2$3"4&4
+!
+?*!+4#+.4#!')#!(.'.!8*4!8#.'34#!#,95,##45,97!H#!854$'!,##(#(!'*!(#85,#!.,(!(#'#&'!5,(5;5(3.%!
+.''.&<5,9!&.$#$>!I*4!')5$7!H#!5(#,'585#(!#.&)!0.6#4!:#;#4<3$#,!$)*'!@H)#4#!.!;.%5(!GJ!;.%3#!H.$!
++4#$#,'B!.$!')#!#,(+*5,'!*8!.,!.''.&<>!"#!')#,!2.&<'4.&<#(!84*1!#.&
+)!$)*'!#;#,'!'*!')#!+4#;5*3$!
+&).,9#!*8!+*$$#$$5*,7!H)5&)!H.$!1.4<#(!.$!')#!$'.4'!*8!')#!.''.&<>!K,!$5'3.'5*,$!H)#4#!13%'5+%#!
+$)*'$!*&&344#(!H5')5,!.!$5,9%#!+*$$#$$5*,7!')#$#!H#4#!1#49#(!5,'*!*,#!&.$#7!.,(!')#!'*'.%!GJ!H.$!
+$311#(>!?)5$!+4*&#$$!9#,#4.'#(!.!&
+%#.,!(.'.$#'!*8!.''.&<!&.$#$7!#.&)!H5')!5'$!*H,!3,5L3#!$'.4'!.,(!
+#,(!+*5,'$7!GJ!;.%3#7!.,(!*')#4!1#'.(.'.>
+!
+56"4&$78$9"4)($%#"#)4#)("'$:&"#/.&4
+!
+K,!')#!854$'!+).$#!*8!8#.'34#!#,95,##45,97!H#!#G'4.&'#(!8*34!&*4#!$'.'5$'5&.%!8#.'34#$!84*1!#.&)!
+.''.&<5,9!&.$#M
+!
+¥
+!
+!/."#)*+8
+!
+?*'.%!.&'5;#!+%.6!'51#!(345,9!')#!.''.&<!@26!$3115,9!#;#,'!(34.'5*,$!H5')5,!
+#.&)!&.$#B>
+!
+¥
+!
+!)4#"+(&$3*;&.&<8
+!
+N*125,#(!')#!%#,9')!*8!.%%!+.$$#$!.,(!')#!(5$'.,&#!*8!&.445#$!'*!
+#$'51.'#!'*'.%!2.%%!1*;#1#,'>
+!
+¥
+!
+=/>?&.$*@$5"44&48
+!
+N*3,'#(!')#!,312#4!*8!+.$$!#;#,'$!5,!#.&)!$#L3#,&#>
+!
+¥
+!
+=/>?&.$*@$5'"A&.4$B+;*';&<8
+!
+N*3,'#(!3,5L3#!0.6#4!:#;#4<3$#,!+%.6#4$!+.4'5&5+.'5,9!5,!
+')#!.''.&<7!H5')!%*95&!'*!).,(%#!$32$'5'3'5*,$!&*44#&'%6!.,(!.;*5(!5,8%.'#(!&*3,'$>
+!
+?)#$#!8#.'34#$!+4*;5(#!.!8*3,(.'5*,.%!$311.46!*8!#.&)!.''.&<!.,(!8*41!')#!2.$5$!8*4!834')#4!
+'.&'5&.%!.,.%6$5$>
+!
+56"4&$C8$%-"#)"'$"+<$9"''$5.*0.&44)*+$:&"#/.&4
+!
+K,! ')#! $#&*,(! +).$#7! H#! 8*&3$#(! *,! ')#! $+.'5.%! (6,.15&$! *8! #.&)! .''.&<! 26! .,.%6F5,9! )*H! ')#!2.%%!
+1*;#(!.&4*$$!(588#4#,'!.4#.$!*8!')#!+5'&)>!?)#!85#%(!H.$!(5;5(#(!5,'*!.!DGO!945(!@PO!F*,#$B7!.,(!H#!
+&*3,'#(!')#!,312#4!*8!'51#$!')#!2.%%!#,'#4#(!#.&)!F*,#!(345
+,9!.,!.''.&<>!"#!.%$*!4#&*4(#(!')#!
+$'.4'5,9! .,(! #,(5,9! F*,#$! 8*4! #.&)!&.$#>! Q((5'5*,.%!8#.'34#$! 5,&%3(#(! ')#!,312#4! *8! F*,#!
+'4.,$5'5*,$!@)*H!*8'#,!')#!2.%%!&).,9#(!.4#.$B7!&*3,'$!*8!8*4H.4(!.,(!2.&<H.4(!1*;#1#,'$!2.$#(!
+*,! G
+-
+&**4(5,.'#! &).,9#$7! .,(! ')#!
++&#$
+-.*0.&44$ ."#)*
+R
+.! 1#'45&! ').'! L3.,'585#$! )*H! #885&5#,'%6! ')#!
+2.%%!1*;#(!8*4H.4(!&*1+.4#(!'*!2.&<H.4(!(345,9!')#!.''.&<>
+!
+!" # $ % & ' ( & " ) ) $ *+ # , ' $ -
+.' # + / $ 0 ' & 1+ & 2 $ 3, ) # + 4 5 "
+$
+6
+$
+7.'#+/$0'&1+&2$3,)#+45"$8$.'#+/$9+5:1+&2$3,)#+45";
+$
+56"4&$D8$:.&&E&$:.">&$"+<$%6*#$3*+#&F#$:&"#/.&4
+!
+K,!')#!')54(!+).$#7!H#!3$#(!/'.'$0*12=$!
+84##F#
+-
+84.1#!(.'.!'*!#G'4.&'!$+.'5.%!&*,'#G'!8#.'34#$!.'!
+')#!1*1#,'!*8!#.&)!$)*'>!?)#$#!5,&%3(#M
+!
+¥
+!
+=/>?&.$*@$G--*+&+#4$)+$:.*+#8
+!
+N*3,'$!')#!(#8#,(#4$!(54#&'%6!5,!84*,'!*8!')#!$)**'#4
+R
+$+#&585&.%%67!*++*,#,'$!H)*$#!G
+-
+&**4(5,.'#!5$!94#.'#4!').,!')#!$)**'#4=$!@&%*$#4!'*!9*.%B!
+.,(!H)*$#!6
+-
+&**4(5,.'#!5$!H5')5,!STEU!*8!')#!$)**'#4=$!6!@4*39)%6!5,!%5,#!)*45F*,'.%%6B>
+!
+¥
+!
+!)4#"+(&$#*$H*"'$3&+#&.8
+!
+?)#!$'4.59)'
+-
+%5,#!@V3&%5(#.,B!(5$'.,&#!84*1!')#!$)**'#4!'*!')#!
+&#,'#4!*8!')#!9*.%>
+!
+¥
+!
+%6*#$1+0'&8
+!
+?)#!$5F#!*8!')#!*+#,!.,9%#!'*!')#!9*.%7!&.%&3%.'#(!3$5,9!')#!$)**'#4=$!
++*$5'5*,!.,(!')#!9*.%+*$'$>
+!
+¥
+!
+I"#(6$5&.)*<8
+!
+")#')#4!')#!$)*'!*&&344#(!5,!')#!854$'!*4!$#&*,(!).%8>
+!
+¥
+!
+1?4*'/#&$I)+/#&8
+!
+?)#!.&'3.%!15,3'#!*8!')#!1.'&)!5,!H)5&)!')#!$)*'!).++#,#(!@#>9>7!WO')!
+15,3'#B>
+!
+?)#$#!8#.'34#$!)#%+!L3.,'586!')#!(5885&3%'6!.,(!L3.%5'6!*8!')#!$)**'5,9!*++*4'3,5'67!+4*;5(5,9!
+51+*4'.,'!&*,'#G'!8*4!GJ!+4#(5&'5*,>
+!
+!
