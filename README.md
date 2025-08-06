@@ -2,7 +2,7 @@
 
 ## Data Selection & Scope
 
-We selected the open-access StatsBomb dataset as our primary data source, focusing specifically on Bayer Leverkusen’s full season in the Bundesliga. This dataset provides highly detailed event logs (event.json), lineup information (lineup.json), and 360-degree freeze-frame data (360.json) for each match. To ensure future flexibility and easy access, we organized the data so that each match has its own folder containing all three files.
+We selected the open-access StatsBomb dataset as our primary data source, focusing specifically on Bayer Leverkusen’s full season in the Bundesliga. This dataset provides highly detailed event logs (`event.json`) for each match. All features in this project were engineered solely from the event.json files, which include both event and freeze-frame (shot context) data. To ensure future flexibility and easy access, we organized the data so that each match has its own folder containing all relevant files.
 
 ## Structuring Attack Cases
 
@@ -27,7 +27,7 @@ In the second phase, we focused on the spatial dynamics of each attack by analyz
 
 ## Phase 3: Freeze Frame and Shot Context Features
 
-In the third phase, we used StatsBomb’s freeze-frame data to extract spatial context features at the moment of each shot. These include:
+In the third phase, we used StatsBomb’s freeze-frame data (included in event.json) to extract spatial context features at the moment of each shot. These include:
 
 - **Number of Opponents in Front:** Counts the defenders directly in front of the shooter—specifically, opponents whose x-coordinate is greater than the shooter’s (closer to goal) and whose y-coordinate is within ±10% of the shooter’s y (roughly in line horizontally).
 - **Distance to Goal Center:** The straight-line (Euclidean) distance from the shooter to the center of the goal.
@@ -36,3 +36,50 @@ In the third phase, we used StatsBomb’s freeze-frame data to extract spatial c
 - **Absolute Minute:** The actual minute of the match in which the shot happened (e.g., 54th minute).
 
 These features help quantify the difficulty and quality of the shooting opportunity, providing important context for xG prediction.
+
+## Additional Engineered Features
+
+To provide a more nuanced view of each attack and enrich tactical analysis, several additional features were engineered from the event data, including:
+
+- **Number of Dribbles:** Total dribbles in the attack.
+- **Number of Duels:** Total duels in the attack.
+- **Number of Crosses:** Total crosses in the attack.
+- **Number of Events:** Total number of events in the attack.
+- **Goal Scored:** Binary indicator (1 if attack led to a goal, 0 otherwise).
+- **Number of Long Passes:** Passes exceeding 30 units in length within the attack.
+- **Attack Velocity:** Average ball velocity, calculated as total distance covered divided by attack duration.
+
+## Feature Inventory
+
+Below is the complete list of 24 key features engineered for each attacking case:
+
+1. **Duration**  
+2. **Distance Covered**  
+3. **Number of Passes**  
+4. **Number of Players Involved**  
+5. **Zone Entry Counts** (24 zones as a vector)  
+6. **Starting Zone**  
+7. **Ending Zone**  
+8. **Zone Transitions**  
+9. **Forward Movements**  
+10. **Backward Movements**  
+11. **Net Progress Ratio**  
+12. **Number of Opponents in Front**  
+13. **Distance to Goal Center**  
+14. **Shot Angle**  
+15. **Match Period**  
+16. **Absolute Minute**  
+17. **Number of Dribbles**  
+18. **Number of Duels**  
+19. **Number of Crosses**  
+20. **Number of Events**  
+21. **Goal Scored**  
+22. **Number of Long Passes**  
+23. **Attack Velocity**  
+24. **Pressure on Shooter** (sum of proximity-weighted defensive presence within 6m at shot moment)
+
+*Note: All features were derived from the event.json file, including freeze-frame information.*
+
+---
+
+Let me know if you want it in a different style (e.g., a more compact table, or extra technical detail for each feature)!
