@@ -124,6 +124,12 @@ def run_full_pipeline(event_json_path, match_name):
         distances = []
         num_players = []
         num_passes = []
+        num_dribbles = []
+        num_duels = []
+        num_crosses = []
+        num_events = []
+        goal_scored = []
+        num_long_passes = []
         for _, row in df_cleaned.iterrows():
             start_idx = int(row["start_index"])
             end_idx = int(row["end_index"])
@@ -139,10 +145,43 @@ def run_full_pipeline(event_json_path, match_name):
                     players.add(pid)
             num_players.append(len(players))
             num_passes.append(sum(1 for e in events_in_case if is_pass(e)))
+            num_dribbles.append(sum(1 for e in events_in_case if e.get("type", {}).get("name") == "Dribble"))
+            num_duels.append(sum(1 for e in events_in_case if e.get("type", {}).get("name") == "Duel"))
+            num_crosses.append(sum(
+                1 for e in events_in_case if e.get("type", {}).get("name") == "Pass" and e.get("pass", {}).get("cross", False)
+            ))
+            num_events.append(end_idx - start_idx + 1)
+            # Check if the last event is a goal
+            is_goal = 0
+            if events_in_case:
+                last_event = events_in_case[-1]
+                if (
+                    last_event.get("type", {}).get("name") == "Shot"
+                    and last_event.get("shot", {}).get("outcome", {}).get("name") == "Goal"
+                ):
+                    is_goal = 1
+            goal_scored.append(is_goal)
+            # Calculate number of long passes (>27.4 units; equivalent to 30 yards)
+            long_pass_count = sum(
+                1 for e in events_in_case
+                if e.get("type", {}).get("name") == "Pass"
+                and e.get("pass", {}).get("length", 0) > 27.4
+            )
+            num_long_passes.append(long_pass_count)
         df_cleaned["duration"] = durations
         df_cleaned["distance_covered"] = distances
         df_cleaned["number_of_players_involved"] = num_players
         df_cleaned["num_pass"] = num_passes
+        df_cleaned["num_dribbles"] = num_dribbles
+        df_cleaned["num_duels"] = num_duels
+        df_cleaned["num_crosses"] = num_crosses
+        df_cleaned["num_events"] = num_events
+        df_cleaned["goal_scored"] = goal_scored
+        df_cleaned["num_long_passes"] = num_long_passes
+        # Add velocity column: distance_covered divided by duration (avoid division by zero)
+        df_cleaned["velocity"] = df_cleaned.apply(
+            lambda row: row["distance_covered"] / row["duration"] if row["duration"] > 0 else 0, axis=1
+        )
         BaseFeatures_DF = df_cleaned
 
         # --- Location Features ---
@@ -240,7 +279,7 @@ def run_full_pipeline(event_json_path, match_name):
             df.at[idx, 'End_Zone'] = end_zone
         df[zone_count_cols] = df[zone_count_cols].fillna(0).astype(int)
         LocationFeatures_DF = df
-
+        
         # --- Freeze Frame Features ---
         df = LocationFeatures_DF.copy()
         def get_event_by_index(events, idx):
@@ -279,6 +318,7 @@ def run_full_pipeline(event_json_path, match_name):
         shoot_angle_list = []
         period_list = []
         minute_absolute_list = []
+        pressure_on_shooter_list = []
         for _, row in df.iterrows():
             end_idx = int(row["end_index"])
             event = get_event_by_index(events, end_idx)
@@ -304,6 +344,23 @@ def run_full_pipeline(event_json_path, match_name):
                     num_opponents_front = count
                     distance_to_goal = euclidean_distance(shooter_x, shooter_y, GOAL_X, GOAL_Y)
                     shoot_angle = compute_shoot_angle(shooter_x, shooter_y)
+            # --- Pressure on Shooter Feature ---
+            pressure_on_shooter = np.nan
+            if event and event.get("type", {}).get("name") == "Shot":
+                if location and len(location) >= 2:
+                    shooter_x, shooter_y = location[:2]
+                    freeze_frame = event.get("shot", {}).get("freeze_frame")
+                    if freeze_frame:
+                        pressure_on_shooter = 0
+                        delta = 6
+                        for player in freeze_frame:
+                            if not player.get("teammate", True):
+                                opp_loc = player.get("location")
+                                if opp_loc and len(opp_loc) == 2:
+                                    d_o = sqrt((opp_loc[0] - shooter_x)**2 + (opp_loc[1] - shooter_y)**2)
+                                    if d_o < delta:
+                                        pressure_on_shooter += (1 - d_o / delta)
+            pressure_on_shooter_list.append(pressure_on_shooter)
             if event:
                 period = event.get("period", np.nan)
                 timestamp = event.get("timestamp", None)
@@ -325,6 +382,7 @@ def run_full_pipeline(event_json_path, match_name):
         df["shoot_angle"] = shoot_angle_list
         df["period"] = period_list
         df["minute_absolute"] = minute_absolute_list
+        df["pressure_on_shooter"] = pressure_on_shooter_list
         FreezeFrameFeatures_DF = df
         return FreezeFrameFeatures_DF
     except Exception as e:
